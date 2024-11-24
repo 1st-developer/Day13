@@ -1,0 +1,477 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    background: #fff;
+}
+
+header {
+    width: 100%;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000;
+}
+
+header .logo {
+    width: 10%;
+    height: 45px;
+    display: flex;
+    color: #fff;
+}
+
+header ion-icon {
+    font-size: 4rem;
+    color: #fff;
+}
+
+header .logo img {
+    width: 100%;
+    height: 100%;
+}
+
+header .logo h1 {
+    font-size: 2.5rem;
+    color: red;
+}
+
+header .logo p {
+    color: #fff;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+nav .links {
+    display: flex;
+    gap: 10px;
+}
+
+nav a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: color 0.25s ease;
+    padding: 0.4rem 1rem;
+}
+
+nav  a::after {
+    position: absolute;
+    content: '';
+    inset: 0;
+    background: #fff;
+    scale: 1 0;
+    z-index: -1;
+    transition: 0.45s;
+    border-radius: 5px;
+}
+
+a:hover {
+    color: #000;
+}
+
+nav a:hover::after {
+    scale: 1 1;
+}
+
+.btn {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn .login, .sign {
+    width: 100px;
+    height: 40px;
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.sec1, .sec2 {
+    width: 100%;
+    background: #fff;
+}
+
+.item-left {
+    width: 400px;
+    height: 100vh;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    backdrop-filter: blur(40px);
+    box-shadow: 0 0 30px #8b8b8b;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.item-left.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.item-left .links {
+    width: 100%;
+    display: grid;
+    gap: 20px;
+    padding: 50px 0 0 50px;
+}
+
+.item-left .links a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+}
+
+.hamburger {
+    cursor: pointer;
+  }
+  
+  .hamburger input {
+    display: none;
+  }
+  
+  .hamburger svg {
+    height: 3em;
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .line {
+    fill: none;
+    stroke: white;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .line-top-bottom {
+    stroke-dasharray: 12 63;
+  }
+  
+  .hamburger input:checked + svg {
+    transform: rotate(-45deg);
+  }
+  
+  .hamburger input:checked + svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+  }
+  
+
+.container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.text {
+    width: 50%;
+    height: 100vh;
+    display: grid;
+    justify-content: end;
+    align-items: center;
+}
+
+.details {
+    display: grid;
+    gap: 20px;
+}
+
+.details h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 3rem;
+}
+
+.details span {
+    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 40px red, 0 0 80px red;
+    color: #fff;
+}
+
+.details p {
+    font-size: 1rem;
+    color: #767676;
+}
+
+.button {
+    margin-top: 1.5rem;
+}
+
+.button a {
+    padding: 10px 40px;
+    background: linear-gradient(to right, #000, #c9c9c9);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.image {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img {
+    width: 70%;
+    height: 60%;
+}
+
+.wrapper {
+    width: 90%;
+    margin: auto;
+    height: 100px;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
+    position: relative;
+    overflow: hidden;
+}
+
+.wrapper .box {
+    width: 200px;
+    height: 100%;
+    background: transparent;
+    border-radius: 5px;
+    animation-name: scrol;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    position: absolute;
+    left: max(calc(200px * 8), 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.wrapper .item1 img, .item5 img, .item6 img, .item7 img, .item8 img {
+    width: 60%;
+    height: auto;
+}
+
+@keyframes scrol {
+    to {
+        left: -200px;
+    }
+}
+
+.item1 {
+    animation-delay: calc(30s / 8 * (8 - 1) * -1);
+}
+.item2 {
+    animation-delay: calc(30s / 8 * (8 - 2) * -1);
+}
+.item3 {
+    animation-delay: calc(30s / 8 * (8 - 3) * -1);
+}
+.item4 {
+    animation-delay: calc(30s / 8 * (8 - 4) * -1);
+}
+.item5 {
+    animation-delay: calc(30s / 8 * (8 - 5) * -1);
+}
+.item6 {
+    animation-delay: calc(30s / 8 * (8 - 6) * -1);
+}
+.item7 {
+    animation-delay: calc(30s / 8 * (8 - 7) * -1);
+}
+.item8 {
+    animation-delay: calc(30s / 8 * (8 - 8) * -1);
+}
+
+.item2 img, .item3 img, .item4 img {
+    width: 30%;
+}
+
+.sec3 {
+    width: 100%;
+    background: #fff;
+}
+
+.three {
+    width: 90%;
+    margin: 100px auto 100px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.center-up {
+    width: 99%;
+    height: 48vh;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 4px 10px #000;
+}
+
+.center-up a {
+    padding: 180px 155px;
+}
+
+
+.contact1 {
+    background: url(image-slider/image/shoes\ \(1\).avif);
+    background-position: center;
+    background-size: cover;
+}
+.contact2 {
+    background: url(image-slider-one/image/shoes\ \(1\).avif);
+    background-position: center;
+    background-size: cover;
+}
+.contact3 {
+    background: url(image-slider-two/image/shoes\ \(1\).avif);
+    background-position: center;
+    background-size: cover;
+}
+.contact4 {
+    background: url(image-slider-three/image/shoes\ \(1\).avif);
+    background-position: center;
+    background-size: cover;
+}
+.contact5 {
+    background: url(image-slider-four/image/shoes\ \(1\).avif);
+    background-position: center;
+    background-size: cover;
+}
+.contact6 {
+    background: url(image-slider-five/image/shoes\ \(1\).avif);
+    background-position: center;
+    background-size: cover;
+}
+.contact7 {
+    background: url(image-slider-six/image/shoes\ \(1\).avif);
+    background-position: center;
+    background-size: cover;
+}
+.contact8 {
+    background: url(image-slider-seven/image/shoes\ \(1\).avif);
+    background-position: center;
+    background-size: cover;
+}
+.contact9 {
+    background: url(image-slider-9/image/clock\ \(1\).avif);
+    background-position: center;
+    background-size: cover;
+}
+.contact10 {
+    background: url(image-slider-10/image/clock\ \(1\).avif);
+    background-position: center;
+    background-size: cover;
+}
+.contact11 {
+    background: url(image-slider-11/image/clock\ \(1\).avif);
+    background-position: center;
+    background-size: cover;
+}
+.contact12 {
+    background: url(image-slider-12/image/clock\ \(1\).avif);
+    background-position: center;
+    background-size: cover;
+}
+.contact13 {
+    background: url(image-slider-13/image/clock\ \(1\).avif);
+    background-position: center;
+    background-size: cover;
+}
+.contact14 {
+    background: url(image-slider-14/image/clock\ \(1\).avif);
+    background-position: center;
+    background-size: cover;
+}
+.contact15 {
+    background: url(image-slider-15/image/clock\ \(1\).avif);
+    background-position: center;
+    background-size: cover;
+}
+.contact16 {
+    background: url(image-slider-16/image/clock\ \(1\).avif);
+    background-position: center;
+    background-size: cover;
+}
+
+
+@media (max-width: 1000px) {
+    .container {
+        display: grid;
+    }
+    .text {
+        width: 100%;
+        height: 60vh;
+        align-items: end;
+    }
+    .image {
+        width: 100%;
+    }
+    nav a {
+        display: none;
+    }
+    .btn {
+        display: flex;
+    }
+    .image img {
+        width: 65%;
+        height: 80%;
+        border-radius: 30rem;
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        display: grid;
+    }
+    .text {
+        width: 100%;
+        height: 60vh;
+    }
+    .btn {
+        display: flex;
+    }
+    .details h1 {
+        font-size: 2rem;
+        font-weight: 800;
+        line-height: 2.5rem;
+    }
+    .image img {
+        width: 80%;
+        height: 50%;
+        border-radius: 30rem;
+    }
+}
+
+
