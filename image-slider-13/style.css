@@ -5,6 +5,10 @@
   font-family: sans-serif;
 }
 
+html {
+scroll-behavior: smooth;
+}
+
 .all {
   width: 100%;
   display: flex;
@@ -230,5 +234,38 @@ button:hover {
   }
   .all .element {
       width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .all {
+    gap: 100px;
+  }
+  .element .wrapper {
+    width: 90%;
+  }
+  .item a {
+    font-size: 2rem;
+  }
+  .item h1 {
+    font-size: 0.8rem;
+  }
+  .text p {
+    font-size: 0.8rem;
+  }
+  .down h2 {
+    font-size: 1.8rem;
+  }
+  .element .wrapper {
+    margin-bottom: 200px;
+  }
+  .buttons a {
+    padding: 15px 15px;
+  }
+  .footer h2 {
+    font-size: 1rem;
+  }
+  .P span {
+    width: 22%;
   }
 }
